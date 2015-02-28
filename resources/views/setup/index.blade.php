@@ -1,5 +1,5 @@
-@extends('template')
+@extends('layout.main')
 
 @section('content')
-<h2>Setup page index! :)</h2>
+    <h2>Setup page index! :)</h2>
 @stop

@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/setup', 'SetupController@index');
-
-Route::group(['middleware' => 'CheckConfigured'], function() {
-    //Routes only to be used if the application has been configured
+if(!Config::get('blog.configured')) {
+    Route::get('/', 'SetupController@index');
+}else {
+    //Normal routes.
     Route::get('/', 'HomeController@index');
-});
+}

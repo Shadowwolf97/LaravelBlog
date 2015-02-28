@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 
-class HomeController extends Controller {
+use Config;
+
+class SetupController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -19,7 +21,7 @@ class HomeController extends Controller {
 	public function index()
 	{
         if(!Config::get('blog.configured', true))
-            return view('setup.index');
+            return view('setup/index');
         else
             App::abort(404);
 	}

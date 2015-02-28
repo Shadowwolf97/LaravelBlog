@@ -25,5 +25,12 @@ class SetupController extends Controller {
         else
             App::abort(404);
 	}
+    
+    public function setup() {
+        if(!Config::get('blog.configured', true))
+            return view('setup/setup');
+        else
+            App:abort(404);
+    }
 
 }

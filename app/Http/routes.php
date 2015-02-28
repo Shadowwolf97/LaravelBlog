@@ -13,6 +13,7 @@
 
 if(!Config::get('blog.configured')) {
     Route::get('/', 'SetupController@index');
+    Route::get('/setup', 'SetupController@setup');
 }else {
     //Normal routes.
     Route::get('/', 'HomeController@index');

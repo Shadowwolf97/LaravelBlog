@@ -11,4 +11,9 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/setup', 'SetupController@index');
+
+Route::group(['middleware' => 'CheckConfigured'], function() {
+    //Routes only to be used if the application has been configured
+    Route::get('/', 'HomeController@index');
+});
